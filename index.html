@@ -51,14 +51,21 @@
         /* Vídeo Header */
         .video-header {
             width: 100%;
-            line-height: 0;
-            background: #000;
-            position: relative;
+            height: 220px;
+            overflow: hidden;
+            border-bottom: 3px solid #fff;
+        }
+
+        .video-header video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         video {
             width: 100%;
-            display: block;
+            max-height: 250px;
+            object-fit: cover;
         }
 
         /* Posicionamento das Imagens Adicionais (Fadinhas/Decor) */
@@ -272,7 +279,7 @@
     <div class="card">
 
         <div class="video-header">
-            <video id="meuVideo" poster="capa-video.jpg" playsinline controls>
+            <video id="meuVideo" poster="capa-video.jpg" playsinline webkit-playsinline muted controls>
                 <source src="assets/aurora (1).mp4" type="video/mp4">
             </video>
         </div>
@@ -304,8 +311,8 @@
                     <span class="label">LOCAL<br>DA FESTA</span>
                 </a>
 
-                <a href="https://wa.me/5519971172457?text=Oii, eu confirmo minha presença!"
-                    target="_blank" class="btn-circular">
+                <a href="https://wa.me/5519971172457?text=Oii, eu confirmo minha presença!" target="_blank"
+                    class="btn-circular">
                     <div class="circulo">
                         <img src="assets/do-utilizador.png" alt="Confirmar">
                     </div>
