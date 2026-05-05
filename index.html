@@ -350,6 +350,18 @@
                 document.getElementById("countdown").innerHTML = "🎉 É HOJE O GRANDE DIA!";
                 return;
             }
+
+            const video = document.getElementById("meuVideo");
+
+            // tempo em segundos (ex: corta os últimos 2s)
+            const cortarAntes = 2;
+
+            video.addEventListener("timeupdate", function () {
+                if (video.duration && video.currentTime >= video.duration - cortarAntes) {
+                    video.pause();
+                }
+            });
+
             const d = Math.floor(diff / (1000 * 60 * 60 * 24));
             const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
